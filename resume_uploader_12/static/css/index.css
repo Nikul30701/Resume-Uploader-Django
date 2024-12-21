@@ -62,7 +62,7 @@ body {
     box-sizing: border-box;
  }
  .inp::placeholder{
-    color: #d0bdf4;
+    color: #d40b70;
 
  }
 .submit-button{
@@ -76,11 +76,15 @@ body {
     font-size: 20px;
     font-weight: 500;
     color: #fff;
+    transition: background-color 0.15s, color 0.15s;
     background-color: rgb(29, 140, 240);
     border: 2px solid rgba(133, 13, 245, 0.5);
     box-sizing: border-box;
     cursor: pointer;
 }
+.submit-button:active {
+    transform: scale(0.50);}
+
 .submit-button:hover{
     background-color: #a71bf2bc;
     color: #fff;
