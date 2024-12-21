@@ -6,12 +6,12 @@ body {
 
   .signup-login {
 
-    background-color: #0f1f37;
+    background-color: #FBEAEB;
     width: 100%;
     height: 1080px;
     overflow: hidden;
     font-size: 24px;
-    color: #fff;
+    color: #990011,;
     font-family: Poppins;
     display: flex;
   justify-content: center;
@@ -21,8 +21,8 @@ body {
   }
 
   .signup-box{
-    background-color:#ffffff30;
-    height: 650px;
+    background-color:#b1c3dc;
+    height: 550px;
     width: 520px;
     border-radius: 25px;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
@@ -48,7 +48,7 @@ body {
   }
  .inp{
    /* margin-top: 10px; */
-  margin: 10px;
+    margin: 10px;
     height: 50px;
     width: 500px;
     border-radius: 10px;
@@ -56,13 +56,13 @@ body {
     padding-left: 20px;
     font-size: 20px;
     font-weight: 500;
-    color: #ffffff;
+    color: #020202;
     background-color: #ffffff30;
     border: 2px solid rgba(255, 255, 255, 0.5);
     box-sizing: border-box;
  }
  .inp::placeholder{
-    color: #ffffffa5;
+    color: #d0bdf4;
 
  }
 .submit-button{
@@ -76,14 +76,16 @@ body {
     font-size: 20px;
     font-weight: 500;
     color: #fff;
-    background-color: #252525;
-    border: 2px solid rgba(255, 255, 255, 0.5);
+    background-color: rgb(29, 140, 240);
+    border: 2px solid rgba(133, 13, 245, 0.5);
     box-sizing: border-box;
     cursor: pointer;
 }
 .submit-button:hover{
-    background-color: #ffff00bc;
+    background-color: #a71bf2bc;
     color: #fff;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15) ;
+}
 }
 .line{
 
@@ -94,13 +96,13 @@ body {
     width: 500px;
     border: none;
     background-color: #ffffff;
-    border: 0px solid rgba(255, 255, 255, 0.5);
+    border: 0px solid rgba(255, 255, 255, 0.718);
     box-sizing: border-box;
 
 }
 .anc{
     text-decoration: none;
-    color: #ffff00bc;
+    color: #1b8ffcbc;
     font-size: 20px;
     font-weight: 500;
     margin-left: 45%;
@@ -111,7 +113,7 @@ body {
 }
 
 .signup-box1{
-    background-color:#ffffff30;
+    background-color:#76bffff5;
     height: 555px;
     width: 520px;
     border-radius: 25px;
@@ -129,7 +131,7 @@ body {
       margin-right: -41px;
   }
   a:hover{
-    color: #ffff00bc;
+    color: #af0cfabc;
   }
   .heads{
     display: flex;
@@ -142,6 +144,6 @@ body {
   }
 
 .completed{
-  color: #c5aeff;
+  color: #d40b70;
   text-decoration: line-through;
 }

@@ -9,10 +9,11 @@ from django.contrib.auth import authenticate, login, logout
 def signup(request):
     if request.method == "POST":
         fnm = request.POST.get('fnm')
+        email = request.POST.get('email')
         pwd = request.POST.get('pwd')
         print(fnm,pwd)
         try:
-            my_user = User.objects.create_user(username=fnm, password=pwd)
+            my_user = User.objects.create_user(username=fnm, email=email, password=pwd)
             my_user.save()
             print("user created successfully")
             return redirect('login')
