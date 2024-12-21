@@ -39,22 +39,22 @@ STATE_CHOICE =(
 )
 
 ROLE_CHOICES = (
-    ("fe","Frontend"),
-    ("be", "Backend"),
-    ("fs", "FullStake")
+    ("Frontend","Frontend"),
+    ("Backend", "Backend"),
+    ("FullStake", "FullStake")
 )
 
 class Resume(models.Model):
-    name = models.CharField(max_length=80)
-    email = models.EmailField()
-    github = models.URLField()
-    mobile = models.PositiveIntegerField()
-    skill = models.CharField(max_length=80)
-    role = models.CharField(choices=ROLE_CHOICES,max_length=50)
-    city = models.CharField(max_length=100)
-    state = models.CharField(choices=STATE_CHOICE , max_length=100)
-    image = models.ImageField(upload_to='profileimg', blank=True)
-    documents = models.FileField(upload_to='doc', blank=True)
+        name = models.CharField(max_length=80)
+        email = models.EmailField()
+        github = models.URLField()
+        mobile = models.PositiveIntegerField()
+        skill = models.CharField(max_length=80)
+        role = models.CharField(choices=ROLE_CHOICES,max_length=50)
+        city = models.CharField(max_length=100)
+        state = models.CharField(choices=STATE_CHOICE , max_length=100)
+        image = models.ImageField(upload_to='profileimg', blank=True)
+        documents = models.FileField(upload_to='doc', blank=True, null=True)
 
-    def __str__(self):
-        return f"{self.name}"
+        def __str__(self):
+            return f"{self.name}"

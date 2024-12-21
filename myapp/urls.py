@@ -18,14 +18,16 @@ from resume_uploader_12 import views
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", views.signup, name="signup"),
     path("login/", views.loginn, name="login"),
     path('home/', views.HomeView.as_view(), name="home"),
-    path('home/<int>:pk>', views.CandidateView.as_view(), name='candidate')
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    path('candidate/<int:pk>', views.CandidateView.as_view(), name='candidate')
+]
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 

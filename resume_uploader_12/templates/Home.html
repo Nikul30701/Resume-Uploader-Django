@@ -8,9 +8,75 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
           rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
           crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static styles.css %}">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="/resources/demos/style.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Arial', sans-serif;
+        }
+        .container {
+            margin-top: 50px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+        h1 {
+            background-color: #dc3545;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        form {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            font-weight: bold;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+            transition: background-color 0.3s;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+        .btn-danger {
+            background-color: #dc3545;
+            border: none;
+            transition: background-color 0.3s;
+        }
+        .btn-danger:hover {
+            background-color: #c82333;
+        }
+        .text-center {
+            margin-top: 20px;
+        }
+        .alert-danger {
+            background-color: #dc3545;
+            color: white;
+        }
+        .candidate-list {
+            margin-top: 20px;
+        }
+        .candidate-list a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .candidate-list a:hover {
+            text-decoration: underline;
+        }
+        .candidate-list hr {
+            border-top: 1px solid #dee2e6;
+        }
+    </style>
 </head>
 <body>
  <div class="container mb-5">
@@ -21,23 +87,23 @@
                  {% csrf_token %}
                  {% for fm in form %}
                     <div class="form-group mb-3">
-                        {{fm.label_tag}} {{fm}}
-                        <small class="text-danger">{{fm.errors|striptags }}</small>
+                        {{ fm.label_tag }} {{ fm }}
+                        <small class="text-danger">{{ fm.errors|striptags }}</small>
                     </div>
                  {% endfor %}
                  <input type="submit" value="Submit" class="btn btn-primary">
                  {% if form.non_field_errors %}
                     {% for error in form.non_field_errors %}
-                        <p class="alert alert-danger my-3">{{error}}</p>
+                        <p class="alert alert-danger my-3">{{ error }}</p>
                     {% endfor %}
                  {% endif %}
              </form>
          </div>
-         <div class="col-sm-4">
-             <h4 class="text-center mb-3"><u>List of Candidate</u></h4>
+         <div class="col-sm-4 candidate-list">
+             <h4 class="text-center mb-3"><u>List of Candidates</u></h4>
              {% for candidate in candidates %}
-                 {{ candidate.id }} : <a  href="{% url 'candidate' candidate.id  %}">{{ candidate.name }}</a>
-             <hr>
+                 {{ candidate.id }} : <a href="{% url 'candidate' candidate.id %}">{{ candidate.name }}</a>
+                 <hr>
              {% endfor %}
          </div>
      </div>

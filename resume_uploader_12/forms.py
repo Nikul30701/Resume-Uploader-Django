@@ -1,30 +1,28 @@
 from django import forms
-
 from .models import Resume
 
-GENDER_CHOICES = (
-    ('male', 'Male'),
-    ('female', "Female"),
-    ('other', 'Others')
-)
+GENDER_CHOICES = [
+    ('M', 'Male'),
+    ('F', 'Female'),
+    ('O', 'Other'),
+]
 
-SKILLS = (
-    ('py','Python'),
-    ('js', 'JavaScript'),
-    ('html','Html'),
-    ('css','CSS'),
-    ('c', 'C++'),
-    ('java','JAVA')
-)
+SKILLS = [
+    ('Python', 'Python'),
+    ('JavaScript', 'JavaScript'),
+    ('Ruby','Ruby'),
+    ('Java','Java'),
+
+]
 
 class ResumeForms(forms.ModelForm):
     gender = forms.ChoiceField(choices=GENDER_CHOICES, widget=forms.RadioSelect)
     skill = forms.MultipleChoiceField(choices=SKILLS, label="Job Skills", widget=forms.CheckboxSelectMultiple)
 
     class Meta:
-        models = Resume
-        fields = ['name','email','github','skill',
-                  'role','city','state','image','documents']
+        model = Resume  # Specify the model
+        fields = ['name', 'email', 'github', 'mobile', 'skill', 'role', 'city', 'state', 'image', 'documents']
+
 
         labels = {'name':'Name', "email":"Email", 'github':"GitHub",
                   'skill':'Skill','role':"Role", 'city':'City',
